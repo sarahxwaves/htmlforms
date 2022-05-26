@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="js/script.js"></script> -->
+    <h1 id="script"></h1>
+
+    <title>Trilha de Auditoria - Documento</title>
+</head>
+
+
+<body onload="loadTableData(eventData)">
+    <header>
+        <img src="images/logo.png" width="139" height="32" alt="Logo
+                Tribanco">
+        <h1 class="text-header">HISTÓRICO ADESÃO DE OFERTAS TRIBANCO</h1>
+    </header>
+    <section class="section-1">
+        <div class="topic">
+            <h1 class="topic-title">INFORMAÇÕES DO CLIENTE</h1>
+        </div>
+        <div class="props">
+            <p>Razão Social: </p>
+            <p>CNPJ: </p>
+            <p>Telefone: </p>
+            <p>E-mail: </p>
+        </div>
+    </section>
+
+    <section class="section-1">
+        <div class="topic">
+            <h1 class="topic-title">INFORMAÇÕES DE ENTRADA</h1>
+        </div>
+        <div class="props">
+            <p>Acessou o APP usando o login: </p>
+            <p>Data e horário: </p>
+            <p>Canal: </p>
+            <p>Código Oferta: </p>
+            <p>Plataforma Utilizada </p>
+            <p>IP: </p>
+            <p>UID (ID único do dispositivo): </p>
+            <p>Endereço MAC: </p>
+            <p>Número da versão APP: </p>
+        </div>
+    </section>
+
+     <section class="section-1">
+        <div class="topic">
+            <h1 class="topic-title">INFORMAÇÕES CADASTRAIS</h1>
+        </div>
+        <div class="columns">
+            <div class="representant">
+                <div class="props">
+                    <div class="title">Dados Representante Legal</div>
+                    <p class="background">Nome Completo: Fulano Silva Ferreira</p>
+                    <p>CPF: </p>
+                    <p class="background">Número do celular: </p>
+                </div>
+            </div>
+            
+        <div class="identification">
+            <div class="props">
+                <div class="title">Doc. Identificação</div>
+                <p class="background">Número RG ou CNH: 11111111</p>
+                <p>Data de emissão: xx/xx/xx </p>
+                <p class="background">Órgão emissor: xxxx </p>
+            </div>
+        </div>
+        </div>
+        <div class="data">
+            <div class="title">Confirmações Pessoais</div>
+            <p class="background">Você é cidadão norte americano? </p>
+            <p>Você ou sua empresa possuem domicílio ou identificação fiscal fora do
+                país?</p>
+            <div class="title">Dados Complementares</div>
+            <p class="background">Dia de vencimento da fatura:</p>
+            <p>Forma de pagamento:</p>
+        </div>
+    </section>
+
+    <section class="section-1">
+        <div class="topic">
+            <h1 class="topic-title">HISTÓRICO DA ADESÃO</h1>
+        </div>
+        <div class="columns">
+
+            <div class="title">Eventos realizados</div>
+            <div class="title">Data e horário</div>
+        </div>
+       
+       
+        <table class="table">
+            <tbody id="tableData"></tbody>
+        </table>
+        
+    </section>
+
+   
+</body>
+
+</html>
+<script>
+    let eventData = [
+        {eventname: 'Acesso ao APP usando o login:', time:'2021 07-07 13:11:15'},
+        {eventname: 'Clique no Banner de oferta:', time:'2021 07-07 13:11:15'},
+        {eventname: 'Tela de benefícios da oferta:', time:'2021 07-07 13:11:15'}
+    ];
+
+    function loadTableData(eventData) {
+        const tableBody = document.getElementById('tableData');
+        let dataHTML = '';
+
+        for(let event of eventData) {
+            dataHTML += `
+            <tr class="cell">
+                <td class="event">${event.eventname}</td>
+                <td class="date">${event.time}</td>
+            </tr>`;
+        }
+        console.log('dataHTML');
+        tableBody.innerHTML = dataHTML;
+    }
+
+</script>

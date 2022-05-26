@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: sans-serif;
+    line-height: 20px;
+    font-family: 'Noto Sans';
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 45px;
+}
+
+.text-header {
+    margin-top: 40px;
+}
+
+.section-1 {
+    width: 60%;
+   margin: 0px auto;
+}
+
+.topic {
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 10px;
+}
+
+.topic-title {
+    background-color: #054375;
+    line-height: 40px;
+    color: white;
+    font-weight: 400;
+    text-align: center;
+}
+
+.props {
+    /* Font */
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 150%;
+    padding-left: 10px;
+}
+
+.columns {
+    
+   display: flex;
+   justify-content: space-evenly;
+
+}
+
+.representant {
+    justify-content: flex-start;
+    max-width: 50%;
+}
+
+.identification {
+    max-width: 50%;
+}
+
+.title {
+font-family: 'Noto Sans';
+font-weight: 550;
+font-size: 22px;
+padding-top: 20px;
+padding-bottom: 10px;
+}
+
+.background {
+    background-color: #ECEFF1;
+    line-height: 40px;
+    justify-content: flex-start;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+p {
+    line-height: 20px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.table {
+    border: 2px solid #ECEFF1;
+    padding: 2px;
+   width: 100%;
+   justify-content: space-around;
+}
+.cell { 
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+
+.date {
+    text-align: center;
+  font-weight: 600;
+  flex: 1;
+}
+
+.event {
+    width: 60%;
+}
+
+td {
+    line-height: 20px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+
+
+
