@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="thhp://thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <!-- <script src="js/script.js"></script> -->
-    <h1 id="script"></h1>
+
 
     <title>Trilha de Auditoria - Documento</title>
 </head>
@@ -20,109 +19,106 @@
         <h1 class="text-header">HISTÓRICO ADESÃO DE OFERTAS TRIBANCO</h1>
     </header>
     <section class="section-1">
+
         <div class="topic">
             <h1 class="topic-title">INFORMAÇÕES DO CLIENTE</h1>
         </div>
+
         <div class="props">
-            <p>Razão Social: </p>
-            <p>CNPJ: </p>
-            <p>Telefone: </p>
-            <p>E-mail: </p>
+            <p th:text="'Razão Social: ' + ${razaoSocial} "></p>
+            <p th:text="CNPJ +${cnpj}"></p>
+            <p th:text="Telefone +${telefone}"></p>
+            <p th:text="E-mail +${email}"></p>
         </div>
     </section>
 
     <section class="section-1">
+
         <div class="topic">
             <h1 class="topic-title">INFORMAÇÕES DE ENTRADA</h1>
         </div>
+
         <div class="props">
-            <p>Acessou o APP usando o login: </p>
-            <p>Data e horário: </p>
-            <p>Canal: </p>
-            <p>Código Oferta: </p>
-            <p>Plataforma Utilizada </p>
-            <p>IP: </p>
-            <p>UID (ID único do dispositivo): </p>
-            <p>Endereço MAC: </p>
-            <p>Número da versão APP: </p>
+            <p th:text="'Acessou o APP usando o login:' + ${login}" ></p>
+            <p th:text="'Data e horário:' + ${{dateTime}}" ></p>
+            <p th:text="'Canal:' + ${canal}" ></p>
+            <p th:text="'Código Oferta:' + ${codigoOferta}" ></p>
+            <p th:text="'Plataforma Utilizada:' + ${plataforma}" ></p>
+            <p th:text="'IP:' + ${{ip}}" ></p>
+            <p th:text="'UID (ID único do dispositivo):' + ${uid}" ></p>
+            <p th:text="'Endereço MAC:' + ${enderecoMac}" ></p>
+            <p th:text="'Número da versão APP:' + ${versao}" ></p>
         </div>
     </section>
 
      <section class="section-1">
+
         <div class="topic">
             <h1 class="topic-title">INFORMAÇÕES CADASTRAIS</h1>
         </div>
+
         <div class="columns">
             <div class="representant">
                 <div class="props">
                     <div class="title">Dados Representante Legal</div>
-                    <p class="background">Nome Completo: Fulano Silva Ferreira</p>
-                    <p>CPF: </p>
-                    <p class="background">Número do celular: </p>
+                    <p th:text="'Nome Completo: ' + ${name}" class="background"></p>
+                    <p th:text="'CPF: ' + ${{cpf}}"></p>
+                    <p th:text="'Número do celular: ' + ${{numeroCelular}}" class="background"></p>
                 </div>
             </div>
             
-        <div class="identification">
-            <div class="props">
-                <div class="title">Doc. Identificação</div>
-                <p class="background">Número RG ou CNH: 11111111</p>
-                <p>Data de emissão: xx/xx/xx </p>
-                <p class="background">Órgão emissor: xxxx </p>
+            <div class="identification">
+                <div class="props">
+                    <div class="title">Doc. Identificação</div>
+                    <p class="background" th:text="'Número RG ou CNH:' + ${rg}" ></p>
+                    <p th:text="'Data de emissão:' + {{dataEmissao}}" ></p>
+                    <p class="background" th:text="'Órgão emissor:' + ${orgaoEmissor}" ></p>
+                </div>
             </div>
         </div>
-        </div>
+
         <div class="data">
             <div class="title">Confirmações Pessoais</div>
-            <p class="background">Você é cidadão norte americano? </p>
-            <p>Você ou sua empresa possuem domicílio ou identificação fiscal fora do
-                país?</p>
+            <p th:text="'Você é cidadão norte americano?' + ${cidadaoFATCA}" class="background"></p>
+            <p th:text="'Você ou sua empresa possuem domicílio ou identificação fiscal fora do
+            país?' + ${empresaFATCA}"></p>
+
             <div class="title">Dados Complementares</div>
-            <p class="background">Dia de vencimento da fatura:</p>
-            <p>Forma de pagamento:</p>
+            <p th:text="'Dia de vencimento da fatura:' + ${{dataFatura}}" class="background"></p>
+            <p th:text="'Forma de pagamento:' + ${formaPagamento}"></p>
         </div>
     </section>
 
     <section class="section-1">
+
         <div class="topic">
             <h1 class="topic-title">HISTÓRICO DA ADESÃO</h1>
         </div>
-        <div class="columns">
 
+        <div class="columns">
             <div class="title">Eventos realizados</div>
+
             <div class="title">Data e horário</div>
         </div>
+        <!-- <tr class="cell">
+            <td class="event">${event.eventname}</td>
+            <td class="date">${event.time}</td>
+        </tr>; -->
+        <p th:text="'Acesso ao APP usando o login:' + ${event-1}"></p>
+        <p th:text="'Clique no Banner de oferta: ' + ${event-2}"></p>
+        <p th:text="'Tela de benefícios da oferta: ' + ${event-3}"></p>
+        <p th:text="'Exibição Termos da Oferta: ' + ${event-4}"></p>
+        <p th:text="'Aceite Termos da Oferta: ' + ${event-5}"></p>
+        <p th:text="'Conclusão do cadastro: ' + ${event-6}"></p>
+        <p th:text="'Tela final com link para baixar o App Tribanco: ' + ${event-7}"></p>
+        
        
-       
-        <table class="table">
+        <!-- <table class="table">
             <tbody id="tableData"></tbody>
-        </table>
+        </table> -->
         
     </section>
 
-   
 </body>
 
 </html>
-<script>
-    let eventData = [
-        {eventname: 'Acesso ao APP usando o login:', time:'2021 07-07 13:11:15'},
-        {eventname: 'Clique no Banner de oferta:', time:'2021 07-07 13:11:15'},
-        {eventname: 'Tela de benefícios da oferta:', time:'2021 07-07 13:11:15'}
-    ];
-
-    function loadTableData(eventData) {
-        const tableBody = document.getElementById('tableData');
-        let dataHTML = '';
-
-        for(let event of eventData) {
-            dataHTML += `
-            <tr class="cell">
-                <td class="event">${event.eventname}</td>
-                <td class="date">${event.time}</td>
-            </tr>`;
-        }
-        console.log('dataHTML');
-        tableBody.innerHTML = dataHTML;
-    }
-
-</script>
