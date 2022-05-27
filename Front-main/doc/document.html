@@ -100,10 +100,7 @@
 
             <div class="title">Data e horário</div>
         </div>
-        <!-- <tr class="cell">
-            <td class="event">${event.eventname}</td>
-            <td class="date">${event.time}</td>
-        </tr>; -->
+        
         <p th:text="'Acesso ao APP usando o login:' + ${event-1}"></p>
         <p th:text="'Clique no Banner de oferta: ' + ${event-2}"></p>
         <p th:text="'Tela de benefícios da oferta: ' + ${event-3}"></p>
@@ -118,6 +115,10 @@
         </table> -->
         
     </section>
+    <section class="section-text">
+        <p class="text" th:text="'O documento acima foi assinado eletronicamente pelo Cliente - ID ' + ${clientId} + ', na data e hora acima especificadas.'"></p>
+    </section>
+
 
 </body>
 
