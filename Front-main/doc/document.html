@@ -1,125 +1,337 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:th="thhp://thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
+<body 
+style = "
+margin: 0;
+padding: 0;
+margin-bottom: 10px;
+box-sizing: border-box;
+list-style-type: none;
+text-decoration: none;
+font-family: sans-serif;
+line-height: 20px;
+font-family: 'Noto Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <header 
+    style = "
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 45px;">
 
-
-    <title>Trilha de Auditoria - Documento</title>
-</head>
-
-
-<body onload="loadTableData(eventData)">
-    <header>
         <img src="images/logo.png" width="139" height="32" alt="Logo
-                Tribanco">
-        <h1 class="text-header">HISTÓRICO ADESÃO DE OFERTAS TRIBANCO</h1>
+                    Tribanco"/>
+
+        <h1 class="text-header" style = "margin-top: 40px;">HISTÓRICO ADESÃO DE OFERTAS TRIBANCO</h1>
+
     </header>
-    <section class="section-1">
 
-        <div class="topic">
-            <h1 class="topic-title">INFORMAÇÕES DO CLIENTE</h1>
+    <section class="section-1" 
+    style = " 
+    width: 60%;
+    margin: 0px auto;">
+
+        <div class="topic" 
+        style = "
+        justify-content: center;
+        align-items: center;
+        padding-top: 40px;
+        padding-bottom: 10px;">
+
+            <h1 class="topic-title" 
+            style = "
+            background-color: #054375;
+            line-height: 40px;
+            color: white;
+            font-weight: 400;
+            text-align: center;"
+            >INFORMAÇÕES DO CLIENTE</h1>
         </div>
 
-        <div class="props">
+        <div class="props" 
+        style = "
+        font-family: 'Noto Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 150%;
+        padding-left: 10px;">
+
             <p th:text="'Razão Social: ' + ${razaoSocial} "></p>
-            <p th:text="CNPJ +${cnpj}"></p>
-            <p th:text="Telefone +${telefone}"></p>
-            <p th:text="E-mail +${email}"></p>
+            <p th:text="'CNPJ: ' + ${cnpj}"></p>
+            <p th:text="'Telefone: ' + ${telefone}"></p>
+            <p th:text="'E-mail: ' + ${email}"></p>
         </div>
     </section>
 
-    <section class="section-1">
+    <section class="section-1" 
+    style = "
+    width: 60%;
+    margin: 0px auto;">
 
-        <div class="topic">
-            <h1 class="topic-title">INFORMAÇÕES DE ENTRADA</h1>
+        <div class="topic" 
+        style = "
+        justify-content: center;
+        align-items: center;
+        padding-top: 40px;
+        padding-bottom: 10px;">
+
+            <h1 class="topic-title" 
+            style = "
+            background-color: #054375;
+            line-height: 40px;
+            color: white;
+            font-weight: 400;
+            text-align: center;"
+            >INFORMAÇÕES DE ENTRADA</h1>
         </div>
 
-        <div class="props">
-            <p th:text="'Acessou o APP usando o login:' + ${login}" ></p>
-            <p th:text="'Data e horário:' + ${{dateTime}}" ></p>
-            <p th:text="'Canal:' + ${canal}" ></p>
-            <p th:text="'Código Oferta:' + ${codigoOferta}" ></p>
-            <p th:text="'Plataforma Utilizada:' + ${plataforma}" ></p>
-            <p th:text="'IP:' + ${{ip}}" ></p>
-            <p th:text="'UID (ID único do dispositivo):' + ${uid}" ></p>
-            <p th:text="'Endereço MAC:' + ${enderecoMac}" ></p>
-            <p th:text="'Número da versão APP:' + ${versao}" ></p>
+        <div class="props" 
+        style = "
+        font-family: 'Noto Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 150%;
+        padding-left: 10px;">
+
+            <p th:text="'Acessou o APP usando o login:' + ${login}"></p>
+            <p th:text="'Data e horário: ' + ${{dateTime}}"></p>
+            <p th:text="'Canal: ' + ${canal}"></p>
+            <p th:text="'Código Oferta: ' + ${codigoOferta}"></p>
+            <p th:text="'Plataforma Utilizada: ' + ${plataforma}"></p>
+            <p th:text="'IP: ' + ${{ip}}"></p>
+            <p th:text="'UID (ID único do dispositivo): ' + ${uid}"></p>
+            <p th:text="'Endereço MAC: ' + ${enderecoMac}"></p>
+            <p th:text="'Número da versão APP: ' + ${versao}"></p>
         </div>
     </section>
 
-     <section class="section-1">
+    <section class="section-1" 
+    style = "
+    width: 60%;
+    margin: 0px auto;">
 
-        <div class="topic">
-            <h1 class="topic-title">INFORMAÇÕES CADASTRAIS</h1>
+        <div class="topic" 
+        style = "
+        justify-content: center;
+        align-items: center;
+        padding-top: 40px;
+        padding-bottom: 10px;">
+
+            <h1 class="topic-title" 
+            style = 
+            "background-color: #054375;
+            line-height: 40px;
+            color: white;
+            font-weight: 400;
+            text-align: center;"
+            >INFORMAÇÕES CADASTRAIS</h1>
         </div>
 
-        <div class="columns">
-            <div class="representant">
-                <div class="props">
+        <div class="columns" 
+        style = "
+        display: flex;
+        justify-content: space-evenly;">
+
+            <div class="representant" style = "
+            justify-content: flex-start;
+            max-width: 50%;">
+            
+                <div class="props" 
+                style = "
+                font-family: 'Noto Sans';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 150%;
+                padding-left: 10px;">
+
                     <div class="title">Dados Representante Legal</div>
-                    <p th:text="'Nome Completo: ' + ${name}" class="background"></p>
+
+                    <p th:text="'Nome Completo: ' + ${name}" class="background" 
+                    style = "
+                    background-color: #ECEFF1;
+                    line-height: 40px;
+                    justify-content: flex-start;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 20px;"></p>
+
                     <p th:text="'CPF: ' + ${{cpf}}"></p>
-                    <p th:text="'Número do celular: ' + ${{numeroCelular}}" class="background"></p>
+
+                    <p th:text="'Número do celular: ' + ${{numeroCelular}}" class="background" 
+                    style = "
+                    background-color: #ECEFF1;
+                    line-height: 40px;
+                    justify-content: flex-start;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 20px;"></p>
                 </div>
             </div>
-            
-            <div class="identification">
-                <div class="props">
+
+            <div class="identification" style = "max-width: 50%;">
+
+                <div class="props" 
+                style = "
+                font-family: 'Noto Sans';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 150%;
+                padding-left: 10px;">
+
                     <div class="title">Doc. Identificação</div>
-                    <p class="background" th:text="'Número RG ou CNH:' + ${rg}" ></p>
-                    <p th:text="'Data de emissão:' + {{dataEmissao}}" ></p>
-                    <p class="background" th:text="'Órgão emissor:' + ${orgaoEmissor}" ></p>
+                    <p class="background" 
+                    style =
+                    "background-color: #ECEFF1;
+                    line-height: 40px;
+                    justify-content: flex-start;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 20px;"  
+                    th:text="'Número RG ou CNH: ' + ${rg}"></p>
+
+                    <p class="background" 
+                    style = "
+                    background-color: #ECEFF1;
+                    line-height: 40px;
+                    justify-content: flex-start;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 20px;" 
+                    th:text="'Órgão emissor: ' + ${orgaoEmissor}"></p>
                 </div>
             </div>
         </div>
 
         <div class="data">
-            <div class="title">Confirmações Pessoais</div>
-            <p th:text="'Você é cidadão norte americano?' + ${cidadaoFATCA}" class="background"></p>
+            <div class="title" 
+            style = "
+            font-family: 'Noto Sans';
+            font-weight: 550;
+            font-size: 22px;
+            padding-top: 20px;
+            padding-bottom: 10px;"
+            >Confirmações Pessoais</div>
+
+            <p th:text="'Você é cidadão norte americano?' + ${cidadaoFATCA}" class="background" 
+            style = "
+            background-color: #ECEFF1;
+            line-height: 40px;
+            justify-content: flex-start;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;"></p>
+
             <p th:text="'Você ou sua empresa possuem domicílio ou identificação fiscal fora do
-            país?' + ${empresaFATCA}"></p>
+                país?' + ${empresaFATCA}"></p>
 
-            <div class="title">Dados Complementares</div>
-            <p th:text="'Dia de vencimento da fatura:' + ${{dataFatura}}" class="background"></p>
-            <p th:text="'Forma de pagamento:' + ${formaPagamento}"></p>
+            <div class="title" 
+            style = "
+            font-family: 'Noto Sans';
+            font-weight: 550;
+            font-size: 22px;
+            padding-top: 20px;
+            padding-bottom: 10px;"
+            >Dados Complementares</div>
+
+            <p th:text="'Dia de vencimento da fatura: ' + ${{dataFatura}}" class="background" 
+            style = "
+            background-color: #ECEFF1;
+            line-height: 40px;
+            justify-content: flex-start;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;"></p>
+            <p th:text="'Forma de pagamento: ' + ${formaPagamento}"></p>
         </div>
+
+    </section>
+    <section class="section-1" 
+    style = "
+    width: 60%;
+    margin: 0px auto;">
+
+        <div class="topic" 
+        style = "
+        justify-content: center;
+        align-items: center;
+        padding-top: 40px;
+        padding-bottom: 10px;">
+
+            <h1 class="topic-title" 
+            style = "
+            background-color: #054375;
+            line-height: 40px;
+            color: white;
+            font-weight: 400;
+            text-align: center;"
+            >HISTÓRICO DA ADESÃO</h1>
+        </div>
+
+        <div class="columns" 
+        style = "
+        display: flex;
+        justify-content: space-evenly;">
+
+            <div class="title" 
+            style = "
+            font-family: 'Noto Sans';
+            font-weight: 550;
+            font-size: 22px;
+            padding-top: 20px;
+            padding-bottom: 10px;"
+            >Eventos realizados</div>
+
+            <div class="title" 
+            style = "
+            font-family: 'Noto Sans';
+            font-weight: 550;
+            font-size: 22px;
+            padding-top: 20px;
+            padding-bottom: 10px;"
+            >Data e horário</div>
+        </div>
+        <table class="table" 
+            style = "
+            border: 2px solid #ECEFF1;
+            padding: 2px;
+            width: 100%;
+            justify-content: space-around;">
+
+                <tr class="cell" 
+                style = "
+                display: flex;
+                align-items: center;
+                margin-top: 10px;" 
+            >
+                    <td th:text="'Acesso ao APP usando o login: ' + ${event-1}"></td>
+                    <td th:text="'Clique no Banner de oferta: ' + ${event-2}"></tr>
+                    <td th:text="'Tela de benefícios da oferta: ' + ${event-3}"></td>
+                    <td th:text="'Exibição Termos da Oferta: ' + ${event-4}"></td>
+                    <td th:text="'Aceite Termos da Oferta: ' + ${event-5}"></td>
+                    <td th:text="'Conclusão do cadastro: ' + ${event-6}"></td>
+                    <td th:text="'Tela final com link tdara baixar o App Tribanco: ' + ${event-7}"></td>
+                </tr>
+            </table>
     </section>
 
-    <section class="section-1">
+    <section class="section-text" 
+    style = "
+    width: 30%;
+    margin: 0px auto;
+    justify-content: center;">
 
-        <div class="topic">
-            <h1 class="topic-title">HISTÓRICO DA ADESÃO</h1>
-        </div>
-
-        <div class="columns">
-            <div class="title">Eventos realizados</div>
-
-            <div class="title">Data e horário</div>
-        </div>
-        
-        <p th:text="'Acesso ao APP usando o login:' + ${event-1}"></p>
-        <p th:text="'Clique no Banner de oferta: ' + ${event-2}"></p>
-        <p th:text="'Tela de benefícios da oferta: ' + ${event-3}"></p>
-        <p th:text="'Exibição Termos da Oferta: ' + ${event-4}"></p>
-        <p th:text="'Aceite Termos da Oferta: ' + ${event-5}"></p>
-        <p th:text="'Conclusão do cadastro: ' + ${event-6}"></p>
-        <p th:text="'Tela final com link para baixar o App Tribanco: ' + ${event-7}"></p>
-        
-       
-        <!-- <table class="table">
-            <tbody id="tableData"></tbody>
-        </table> -->
-        
+        <p class="text" 
+        style = "
+        text-align: center;
+        line-height: 30px;"
+        th:text="'O documento acima foi assinado eletronicamente pelo Cliente - ID ' + ${clientId} + ', na data e hora acima especificadas.'"></p>
     </section>
-    <section class="section-text">
-        <p class="text" th:text="'O documento acima foi assinado eletronicamente pelo Cliente - ID ' + ${clientId} + ', na data e hora acima especificadas.'"></p>
-    </section>
-
-
 </body>
-
 </html>
